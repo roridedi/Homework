@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server hostname="localhost" id="Container Development Environment 3.2+" id-set="true" minishift.file.location="/home/roridedi/bin/minishift" minishift.home.location="/home/roridedi/.minishift" name="Container Development Environment 3.2+" org.jboss.tools.openshift.cdk.server.core.internal.adapter.CDKServer.hypervisor="kvm" org.jboss.tools.openshift.cdk.server.core.internal.adapter.CDKServer.passCredentials="true" runtime-id="Container Development Environment 3.2+" server-type="org.jboss.tools.openshift.cdk.server.type.v32" server-type-id="org.jboss.tools.openshift.cdk.server.type.v32" start-timeout="1800" stop-timeout="900" timestamp="0"/>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v7.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v7.0 Server at localhost" name="Tomcat v7.0 Server at localhost" runtime-id="Apache Tomcat v7.0" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="1">
+    <list key="modules" value0="roridedi3assignment5::org.eclipse.jst.jee.server:roridedi3assignment5::jst.web::2.5"/>
+  </server>
+</servers>

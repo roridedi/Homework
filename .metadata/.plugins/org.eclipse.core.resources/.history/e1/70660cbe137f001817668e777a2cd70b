@@ -1,0 +1,106 @@
+package roridedi3assignment5;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet("/RegistrationServlet")
+public class RegistrationServlet extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		Registration registration = (Registration) session.getAttribute("registration");
+		
+		String[] courses;
+		String price =null;
+		if (registration ==null) {
+			System.out.println("ITS NULL");
+			String firstName = request.getParameter("name");
+			String email = request.getParameter("email");
+			String employmentStatus = request.getParameter("employmentstatus");
+			String vehicle = request.getParameter("vehicle");
+			courses = request.getParameterValues("courses");
+			registration = new Registration();
+			registration.setFirstName(firstName);
+			registration.setEmail(email);
+			registration.setEmploymentStatus(employmentStatus);
+			registration.setVehicle(vehicle);
+			List<String> courseArray = Arrays.asList(courses);
+			Set<Course> courseList = new HashSet<>();
+			for (String courseName : courseArray) {
+				Course c = new Course();
+				c.setCourseId(courseName);
+				c.setCourseName(courseName);
+				courseList.add(c);
+			}
+			registration.setCourses(courseList);
+			if (employmentStatus.equalsIgnoreCase("student")) {
+				price = "1000";
+			} else if (employmentStatus.equalsIgnoreCase("employee")) {
+				price = "850";
+			} else if (employmentStatus.equalsIgnoreCase("other")) {
+				price = "1350";
+			}
+			registration.setPrice(price);
+			if (vehicle != null) {
+				registration.setHotelPrice("185");
+			} else {
+				registration.setHotelPrice("0");
+			} 
+		}else {
+			System.out.println("ITS not null");
+			String courseToRemove=request.getParameter("action");
+			Set<Course> coursezz= registration.getCourses();
+			coursezz.remove(courseToRemove);
+			registration.setCourses(coursezz);
+		}
+		if (registration.getEmploymentStatus().equalsIgnoreCase("student")) {
+			price = "1000";
+		} else if (registration.getEmploymentStatus().equalsIgnoreCase("employee")) {
+			price = "850";
+		} else if (registration.getEmploymentStatus().equalsIgnoreCase("other")) {
+			price = "1350";
+		}
+		registration.setPrice(price);
+		if (registration.getVehicle() != null) {
+			registration.setHotelPrice("185");
+		} else {
+			registration.setHotelPrice("0");
+		} 
+		int tt= registration.getCourses().size();
+		int t3= (tt * Integer.valueOf(price))+ Integer.valueOf(registration.getHotelPrice());
+		String total=String.valueOf(t3);
+		registration.setTotal(total);
+		RequestDispatcher rd = request.getRequestDispatcher("success.jsp");
+		session.setAttribute("registration", registration);
+		request.setAttribute("registration", registration);
+		try {
+			rd.forward(request, resp);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+}

@@ -1,0 +1,3 @@
+INDEX VERSION 1.130+/home/roridedi/summer18/.metadata/.plugins/org.eclipse.jdt.core
+1324509615.index
+3066292990.index

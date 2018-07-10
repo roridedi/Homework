@@ -1,0 +1,7 @@
+INDEX VERSION 1.130
+/home/roridedi/summer18/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/693640637.index
+/roridedi3assignment3/src/main/java
+/home/roridedi/summer18/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1572926514.index
+/roridedi3assignment4/src/main/java
+/home/roridedi/summer18/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3328555101.index
+/roridedi3assignment5/src/main/java

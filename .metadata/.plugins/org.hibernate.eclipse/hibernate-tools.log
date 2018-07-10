@@ -1,0 +1,5 @@
+2018-06-19 13:33:10,659 0      [      Worker-46] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-19 13:33:10,669 10     [      Worker-46] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-19 13:33:13,067 2408   [      Worker-46] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-19 13:33:13,070 2411   [      Worker-46] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-19 13:33:13,088 2429   [      Worker-46] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!

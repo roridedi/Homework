@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.line {
+  border-top: 5px solid grey;
+  flex-grow: 1;
+  margin: 0;
+  width: 100%
+}
+</style>
+<meta charset="UTF-8">
+<title>JHU Registration Form</title>
+</head>
+<body>
+<img  width="100%" src="jhubanner.jpg"/>
+<h2 style="color: #0000A0">JOHNS HOPKINS ANNUAL SOFTWARE DEVELOPMENT SEMINAR</h2>
+<div class="line"> 
+
+</div>
+<br>
+<form action="RegistrationServlet" method="POST">
+<fieldset>
+<legend>Contact Information</legend>
+<p>Name: <input type="text" id="name" name="name"  required> </p>
+<p>Email: <input type="email" id="email" name="email"  required></p>
+</fieldset>
+<fieldset>
+<legend>Select Your Courses</legend>
+   <select name="courses" size="6" multiple required>
+    <option value="A4 - Web Services">A4 - Web Services</option>
+    <option value="A1 - J2EE Design Patterns">A1 - J2EE Design</option>
+    <option value="A3 - Service Oriented Architectures">A3 - Service Oriented Architectures</option>
+    <option value="A4 - Enterprise Service Bus">A4 - Enterprise Service Bus</option>
+    <option value="A6 - Secure Messaging">A6 - Secure Messaging</option>
+    <option value="A5 - Web Services Security">A5 - Web Services Security</option>
+  </select>
+</fieldset>
+
+<fieldset>
+<legend>Employment Status</legend>
+    <input type="radio" name="employmentstatus" value="employee" required> JHU Employee
+    <input type="radio" name="employmentstatus" value="student"> JHU Student
+    <input type="radio" name="employmentstatus" value="speaker"> Speaker
+    <input type="radio" name="employmentstatus" value="other"> Other
+</fieldset>
+  <fieldset>
+   <legend>Additional Fees and Charges</legend>
+  <input type="checkbox" name="vehicle" value="Hotel">Hotel Accommodation (Conference Guest Special Fee- Parking Included)<br>
+  <input type="checkbox" name="vehicle" value="Car"> Parking Permit<br>
+  </fieldset>
+    <div>
+            <input type="submit" id="submit" value="Compute Seminar Costs">
+        </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css">
+.line {
+  border-top: 5px solid grey;
+  flex-grow: 1;
+  margin: 0;
+  width: 100%
+}
+</style>
+<meta charset="UTF-8">
+<title>JHU Successful Registration Form</title>
+</head>
+<body>
+<img  width="100%" src="jhubanner.jpg"/>
+<h2 style="color: #0000A0">JOHNS HOPKINS ANNUAL SOFTWARE DEVELOPMENT SEMINAR</h2>
+<div class="line"> 
+
+</div>
+<br>
+
+<div>
+<p>Hello ${username}</p>
+<p>You are registered as a  <%= request.getParameter("") %>${registrationType}</p>
+<p>Your email will be sent to: ${emailAddress}</p>
+
+<table>
+<tr>
+<th> Your Courses</th>
+<th> Cost</th>
+
+</tr>
+
+</table>
+
+</div>
+</body>
+</html>
