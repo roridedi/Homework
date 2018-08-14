@@ -66,10 +66,18 @@
 	</div>
 
 	<form action="index.html">
-		<input type="hidden" name="action" value="edit"> <input
-			type="submit" value="Back"> <input type="submit"
-			value="Edit Information"> <input type="submit"
-			value="Add More Courses">
+		<input type="hidden" name="action" value="edit"> 
+			<input type="submit" value="Back"> 
+			<input type="submit" value="Edit Information"> 
+			<input type="submit" value="Add More Courses">
+	</form>
+<!-- 
+<form method="POST" action="EmailServlet" >
+		<input type="submit" value="Confirm Registration"> 
+	</form>
+ -->	
+ <form method="GET" action="PaymentServlet" >
+		<input type="submit" value="Proceed To Checkout"> 
 	</form>
 	<script>
 		function back() {

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ortech</groupId>
+	<artifactId>roridedi3assignment7</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>apache.snapshots</id>
+			<url>http://repository.apache.org/snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-email</artifactId>
+    <version>1.5</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+  <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>1.6.1</version>
+            </dependency>
+<!-- https://mvnrepository.com/artifact/javax.xml/jaxrpc-api -->
+<!-- https://mvnrepository.com/artifact/javax.xml/jaxrpc-api -->
+<dependency>
+    <groupId>javax.xml</groupId>
+    <artifactId>jaxrpc-api</artifactId>
+    <version>1.1</version>
+</dependency>
+
+
+
+	</dependencies>
+
+
+
+	<packaging>war</packaging>
+
+	
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<webXml>WebContent\WEB-INF\web.xml</webXml>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+
+</project>

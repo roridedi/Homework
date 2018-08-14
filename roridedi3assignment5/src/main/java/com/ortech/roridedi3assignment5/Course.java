@@ -1,4 +1,4 @@
-package roridedi3assignment5;
+package com.ortech.roridedi3assignment5;
 
 public class Course {
 	private String courseId;

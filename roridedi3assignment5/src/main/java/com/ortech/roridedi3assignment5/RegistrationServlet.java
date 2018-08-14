@@ -1,6 +1,7 @@
-package roridedi3assignment5;
+package com.ortech.roridedi3assignment5;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/RegistrationServlet")
 public class RegistrationServlet extends HttpServlet {
 
+	
+	RegistrationDAO dao;
 	/**
 	 * 
 	 */
@@ -23,6 +26,7 @@ public class RegistrationServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+		dao= new RegistrationDAO();
 		HttpSession session = request.getSession();
 		Registration registration = (Registration) session.getAttribute("registration");
 
@@ -39,8 +43,9 @@ public class RegistrationServlet extends HttpServlet {
 			registration.setEmail(email);
 			registration.setEmploymentStatus(employmentStatus);
 			registration.setVehicle(vehicle);
+
 			List<String> courseArray = Arrays.asList(courses);
-			List<Course> courseList = new ArrayList<>();
+			List<Course> courseList = new ArrayList<Course>();
 			for (String courseName : courseArray) {
 				Course c = new Course();
 				c.setCourseId(courseName);
@@ -61,10 +66,12 @@ public class RegistrationServlet extends HttpServlet {
 			} else {
 				registration.setHotelPrice("0");
 			}
+			session.setAttribute("registration", registration);
+
+			dao.saveRegistration(registration);
 		} else {
 			String courseToRemove = request.getParameter("action");
-			List<Course> coursezz = new ArrayList<>();
-
+			List<Course> coursezz = new ArrayList<Course>();
 			for (Course c : registration.getCourses()) {
 				if (c.getCourseName().equalsIgnoreCase(courseToRemove)) {
 					coursezz.remove(c);
